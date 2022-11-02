@@ -1,0 +1,191 @@
+
+/*=====  17.1: 3 Columns  ======*/
+//Gallery filter
+.gallery-filter .filtr-container {
+    display: none;
+}
+
+.push-down--style {
+    margin: 0 -25px;
+
+    /*rtl:ignore*/
+    direction: ltr;
+    /*rtl:ignore*/
+}
+
+.fltr-controls.active {
+    color: $primary;
+}
+
+.filtr-item--style {
+    flex: 0 0 25%;
+    width: 25%;
+    
+
+    img {
+        width: 100%;
+    }
+
+    @include lg {
+        flex: 0 0 33%;
+        width: 33%;
+    }
+
+    @include md {
+        flex: 0 0 50%;
+        width: 50%;
+    }
+
+    @include sm {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+
+    @include ssm {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+}
+
+.filtr-item--style2{
+    width: 25%;
+    .card{
+        width: 100%;
+        overflow: hidden;
+        img{
+            width: 100%;
+        }
+    }
+}
+
+// .width778{
+//     width:778px;
+// }
+// .width376{
+//     width:376px;
+// }
+
+.gc{
+    @include e("title"){
+        p {
+            @include ofs(15px, lh(15px, 22px), 500);
+            @extend .color-dark;
+            margin-bottom: 2px;
+        }
+        span {
+            @include ofs(13px, lh(13px, 22px), 400);
+            @extend .color-light;
+        }
+    }
+    @include m("gallery2"){
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        &:after{
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 200px;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(#5F63F2,.70);
+            border-radius: 10px;
+            transition: 0.3s;
+            transform: scale(0.7);
+        }
+        &:after{
+                visibility: hidden;
+                opacity: 0;
+                transition: 0.3s;
+        }
+        &:hover{
+            &:after{
+                visibility: visible;
+                opacity: 1;
+                top: 0;
+                transform: scale(1);
+            }
+            .card-body{
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+        .card-body{
+            padding: 50px 25px;
+            text-align: center;
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .gc__title{
+            p,span{
+                color: white;
+            }
+        }
+        .subtitle{
+            color: white;
+            @include ofs(14px, lh(14px, 25px,), 400);
+            margin-bottom: 0;
+            margin-top: 15px;
+        }
+        .gc__link{
+            @extend .content-center;
+            margin-top: 19px;
+            li {
+                &:not(:last-child){
+                    margin-right: 10px;
+                }
+                a{
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50rem;
+                    color: white;
+                    @extend .content-center;
+                    background: rgba(white,.25);
+                    svg{
+                        width: 12px;
+                        height: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.gallery-filter {
+    .ap-tab-main{
+        @include ssm{
+            padding:15px 0;
+        }
+        @include xxs {
+            justify-content: center;
+        }
+        .nav-link{
+            @include ofs(14px, lh(14px, 25px), 400);
+            @extend .color-light;
+            padding:20px 0;
+            @include ssm{
+                padding: 6px 0;
+                margin-bottom: 0px;
+              }
+            &.active{
+                font-weight: 500;
+                @extend .color-primary;
+            }
+            &:not(:last-child){
+                margin-right: 25px;
+            }
+            &:after{
+                height:2px;
+                bottom:0;
+            }
+        }
+    }
+}

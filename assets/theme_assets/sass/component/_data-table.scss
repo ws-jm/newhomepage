@@ -1,0 +1,256 @@
+.adv-search-area {
+    form {
+        padding: 0 20px;
+        background: white;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        box-shadow: 0px 5px 20px #9299b808;
+        border-radius: 6px;
+        border: 1px solid #E3E6EF;
+        width: 280px;
+
+        svg {
+            width: 20px;
+            color: #9299B8;
+        }
+
+        .form-control {
+            padding: 10px 13px;
+            line-height: 25px;
+            height: 36px;
+
+            &::placeholder {
+                color: #ADB4D2;
+            }
+        }
+    }
+}
+
+
+
+//footable default
+
+.adv-table-table {
+    @include e(header) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    @include e(button) {
+        a {
+            font-size: 12px;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 93px;
+            padding-right: 35px;
+            height: 40px;
+            border-radius: 6px;
+
+            &:after {
+                font-weight: 900;
+                font-size: 12px;
+            }
+        }
+
+        .table-responsive {
+            overflow-y: hidden;
+        }
+
+    }
+}
+
+.footable-filtering+tr {
+    background-color: #f8f9fb;
+}
+
+#filter-form-container {
+    .form-inline {
+        justify-content: center;
+        margin-top: 5px;
+
+        @include md {
+            margin-bottom: 15px;
+        }
+    }
+
+    label {
+        @include ofs(14, lh(14px, 25px), 400);
+        color: #5A5F7D;
+        text-transform: capitalize;
+    }
+
+    @include ssm {
+        .form-group {
+            width: 100%;
+            flex-wrap: wrap;
+
+            select {
+                width: 100%;
+            }
+
+            &:after {
+                top: auto;
+                bottom: 7%;
+            }
+        }
+    }
+
+    .footable-filtering-search {
+        margin: 25px 0;
+
+        @include md {
+            margin: 15px 0;
+        }
+
+        .input-group {
+            font-weight: 900;
+
+            &:after {
+                font-size: 18px;
+                font-family: "Line Awesome Free";
+                position: absolute;
+                left: 20px;
+                top: 8px;
+                transform: scaleX(-1);
+                content: '\f002';
+                color: #9299B8;
+                z-index: 3;
+            }
+        }
+
+        .input-group-btn {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 3;
+
+            button:first-child {
+                background-color: transparent;
+                border: none;
+                color: #9299B8;
+            }
+
+            .fooicon-search {
+                visibility: hidden;
+            }
+        }
+
+        .form-control {
+            width: 280px;
+            padding-left: 46px;
+        }
+    }
+
+    .form-control {
+        border-radius: 6px;
+        height: 40px;
+        border: 1px solid #E3E6EF;
+        color: #5A5F7D;
+        text-transform: capitalize;
+        width: 200px;
+
+        @include xs {
+            width: 150px;
+            max-width: 100%;
+        }
+    }
+
+    input {
+        border: 1px solid #E3E6EF;
+    }
+}
+
+.footable.adv-table {
+    .pagination>li {
+        margin: 3px;
+
+        >a {
+            border: 1px solid #F1F2F6;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            color: #5A5F7D;
+            font-size: 14px;
+            line-height: 25px;
+        }
+
+        &.active {
+            a {
+                background-color: #5f63f2;
+                color: white;
+            }
+        }
+    }
+
+
+}
+
+
+.adv-table {
+    .footable-filtering-search {
+        height: 40px;
+        margin-left: auto !important;
+
+        @include md {
+            margin-left: 0 !important;
+        }
+    }
+
+    .fooicon {
+        color: #9299B8;
+    }
+}
+
+
+.userDatatable table.adv-table {
+    border-bottom: none;
+
+    .pagination {
+        border-top: 1px solid #F1F2F6;
+        margin: 0;
+        margin-top: 2;
+        padding-top: 27px;
+        padding-bottom: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        @include xxl {
+            justify-content: flex-start;
+        }
+    }
+}
+
+.adv-table tfoot {
+    padding-top: 27px;
+
+    td {
+        padding: 0;
+    }
+}
+
+.footable-pagination-wrapper .label-default {
+    display: none;
+}
+
+//Fix Icon problem
+.fooicon{
+    font-weight: 900;
+    font-family: 'Font Awesome 5 Free' !important;
+}
+
+.fooicon.fooicon-sort{
+    font-family: "Line Awesome Free"!important;
+}
+.fooicon.fooicon-sort:before{
+    content: '\f338';
+}
